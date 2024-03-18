@@ -1,0 +1,160 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="APS4.Vues.AccueilAdminVue"
+             Title="AccueilAdminVue">
+    <ScrollView VerticalScrollBarVisibility="Always">
+        <StackLayout>
+            <StackLayout Margin="5" Spacing="20">
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="100"/>
+                        <RowDefinition Height="75"/>
+                        <RowDefinition Height="500"/>
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+
+                    <Label 
+                       Text="King Burger - Admin"
+                       Grid.ColumnSpan="2"
+                       Grid.Row="0"
+                       VerticalTextAlignment="Center"
+                       HorizontalTextAlignment="Center"
+                       TextColor="White"
+                       TextDecorations="Underline"
+                       FontAttributes="Bold"
+                       FontSize="40"
+                       BackgroundColor="#C50000"
+                       />
+
+                    <Grid
+                        Grid.Column="0"
+                        Grid.Row="2">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="300"/>
+                            <ColumnDefinition Width="*"/>
+                        </Grid.ColumnDefinitions>
+
+                        <VerticalStackLayout
+                           Grid.Column="1">
+                            <Label
+                               Text="Blason"
+                               VerticalTextAlignment="Center"
+                               HorizontalTextAlignment="Center"
+                               FontAttributes="Bold"
+                               FontSize="30"
+                               Margin="10"
+                               />
+                            <Entry
+                               x:Name="NomBlason"
+                               Placeholder="Nom"
+                               HorizontalOptions="Center"
+                               VerticalOptions="Center"
+                               WidthRequest="250"
+                               FontSize="25"
+                               FontAttributes="Bold"
+                               BackgroundColor="#FFFFFF"
+                               Margin="10"
+                               />
+                            <Entry
+                           x:Name="MontantAtteindre"
+                           Placeholder="Montant"
+                           HorizontalOptions="Center"
+                           VerticalOptions="Center"
+                           WidthRequest="250"
+                           FontSize="25"
+                           FontAttributes="Bold"
+                           BackgroundColor="#FFFFFF"
+                           Margin="10"
+                           />
+                            <Button
+                               x:Name="AjoutBlasonButton"
+                               HorizontalOptions="Center"
+                               VerticalOptions="Center"
+                               Text="Ajouter"
+                               BackgroundColor="#1CCEE6"
+                               TextColor="White"
+                               WidthRequest="250"
+                               FontSize="25"
+                               FontAttributes="Bold"
+                               Margin="10"
+                               Clicked="BlasonButton_Clicked"
+                               />
+                        </VerticalStackLayout>
+                    </Grid>
+                    <Grid
+                        Grid.Column="1"
+                        Grid.Row="2">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="300"/>
+                            <ColumnDefinition Width="*"/>
+                        </Grid.ColumnDefinitions>
+
+                        <VerticalStackLayout
+                           Grid.Column="1">
+                            <Label
+                               Text="Produit"
+                               VerticalTextAlignment="Center"
+                               HorizontalTextAlignment="Center"
+                               FontAttributes="Bold"
+                               FontSize="30"
+                               Margin="10"
+                               />
+                            <Entry
+                               x:Name="NomProduit"
+                               Placeholder="Nom"
+                               HorizontalOptions="Center"
+                               VerticalOptions="Center"
+                               WidthRequest="250"
+                               FontSize="25"
+                               FontAttributes="Bold"
+                               BackgroundColor="#FFFFFF"
+                               Margin="10"
+                               />
+                            <Entry
+                               x:Name="PrixProduit"
+                               Placeholder="Prix"
+                               HorizontalOptions="Center"
+                               VerticalOptions="Center"
+                               WidthRequest="250"
+                               FontSize="25"
+                               FontAttributes="Bold"
+                               BackgroundColor="#FFFFFF"
+                               Margin="10"
+                               />
+                            <Entry
+                               x:Name="PointFidelite"
+                               Placeholder="Nb Points Fidelité"
+                               HorizontalOptions="Center"
+                               VerticalOptions="Center"
+                               WidthRequest="250"
+                               FontSize="25"
+                               FontAttributes="Bold"
+                               BackgroundColor="#FFFFFF"
+                               Margin="10"
+                               />
+                            <Button
+                               x:Name="AjoutProduitButton"
+                               HorizontalOptions="Center"
+                               VerticalOptions="Center"
+                               Text="Ajouter"
+                               BackgroundColor="#1CCEE6"
+                               TextColor="White"
+                               WidthRequest="250"
+                               FontSize="25"
+                               FontAttributes="Bold"
+                               Margin="10"
+                               Clicked="ProduitButton_Clicked"
+                               />
+                        </VerticalStackLayout>
+                    </Grid>
+                </Grid>
+            </StackLayout>
+        </StackLayout>
+    </ScrollView>
+</ContentPage>

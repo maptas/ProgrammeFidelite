@@ -3,10 +3,51 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="APS4.Vues.AccueilVue"
              Title="AccueilVue">
-    <VerticalStackLayout>
-        <Label 
-            Text="Welcome to .NET MAUI!"
-            VerticalOptions="Center" 
-            HorizontalOptions="Center" />
-    </VerticalStackLayout>
+    <ScrollView VerticalScrollBarVisibility="Always">
+        <StackLayout>
+            <StackLayout Margin="5" Spacing="20">
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="100"/>
+                        <RowDefinition Height="75"/>
+                        <RowDefinition Height="500"/>
+                    </Grid.RowDefinitions>
+
+                    <Label 
+                        Text="King Burger"
+                        Grid.Row="0"
+                        VerticalTextAlignment="Center"
+                        HorizontalTextAlignment="Center"
+                        TextColor="White"
+                        TextDecorations="Underline"
+                        FontAttributes="Bold"
+                        FontSize="40"
+                        BackgroundColor="#C50000"
+                        />
+
+                    <VerticalStackLayout
+                        Grid.Row="2">
+
+                        <CollectionView x:Name="MalisteProduits">
+                            <!-- Modèle d'élément pour les données de score -->
+                            <CollectionView.ItemsLayout>
+                                <GridItemsLayout Orientation="Vertical" Span="2" HorizontalItemSpacing="100"/>
+                            </CollectionView.ItemsLayout>
+                            <CollectionView.ItemTemplate>
+                                <DataTemplate>
+                                    <StackLayout>
+                                        <!-- Enveloppez le Label dans un Frame pour la gestion des clics -->
+                                        <Frame BackgroundColor="Transparent">
+                                            <Label x:Name="a" Text="{Binding Nom}"/>
+                                        </Frame>
+                                        <Label Text="{Binding Prix, StringFormat='{}{0}€'}"/>
+                                    </StackLayout>
+                                </DataTemplate>
+                            </CollectionView.ItemTemplate>
+                        </CollectionView>
+                    </VerticalStackLayout>
+                </Grid>
+            </StackLayout>
+        </StackLayout>
+    </ScrollView>
 </ContentPage>
