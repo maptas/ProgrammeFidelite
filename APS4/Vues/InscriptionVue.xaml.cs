@@ -17,7 +17,14 @@ public partial class InscriptionVue : ContentPage
 		var mdp = MdpEntry.Text;
 		var tel = TelephoneEntry.Text;
 		var dateNaissanceText = DateNaissanceEntry.Text;
-		DateTime dateNaissance = DateTime.Parse(dateNaissanceText);
+		DateTime dateNaissance = DateTime.Now;
+
+
+        if (dateNaissanceText != null)
+		{
+            dateNaissance = DateTime.Parse(dateNaissanceText);
+        }
+		
 
 		User U1 = new User(email, mdp);
 		U1.Nom = nom;
@@ -33,8 +40,8 @@ public partial class InscriptionVue : ContentPage
         }
 		else
 		{
-			
-		}
+            await DisplayAlert("Erreur", "Informations incomplètent, veuillez les renseigner pour continuer.", "OK");
+        }
 
     }
 }

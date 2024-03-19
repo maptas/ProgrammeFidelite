@@ -2,25 +2,20 @@
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="APS4.Vues.ConnexionVue"
-             Title="ConnexionVue">
+             Title="ConnexionVue"
+             BackgroundColor="#ECF8F6">
     <ScrollView VerticalScrollBarVisibility="Always">
         <StackLayout>
-            <StackLayout Margin="5" Spacing="20">
+            <StackLayout Spacing="20">
                 <Grid>
                     <Grid.RowDefinitions>
                         <RowDefinition Height="100"/>
                         <RowDefinition Height="75"/>
                         <RowDefinition Height="500"/>
                     </Grid.RowDefinitions>
-                    <Grid.ColumnDefinitions>
-                        <ColumnDefinition Width="300"/>
-                        <ColumnDefinition Width="500"/>
-                        <ColumnDefinition Width="*"/>
-                    </Grid.ColumnDefinitions>
 
                     <Label 
                         Text="King Burger"
-                        Grid.ColumnSpan="3"
                         Grid.Row="0"
                         VerticalTextAlignment="Center"
                         HorizontalTextAlignment="Center"
@@ -28,76 +23,94 @@
                         TextDecorations="Underline"
                         FontAttributes="Bold"
                         FontSize="40"
-                        BackgroundColor="#C50000"
+                        BackgroundColor="#226D68"
                         />
-                    <VerticalStackLayout
-                        Grid.Row="2"
-                        Grid.Column="1">
-                        <Label
-                            Text="Connexion"
-                            VerticalTextAlignment="Center"
-                            HorizontalTextAlignment="Center"
-                            FontAttributes="Bold"
-                            FontSize="30"
-                            Margin="10"
-                            />
-                        <Entry
-                            x:Name="EmailEntry"
-                            Placeholder="Email"
+                    <Border Stroke="#D6955B"
+                            StrokeThickness="3"
+                            StrokeShape="RoundRectangle 40"
+                            Background="#18534F"
+                            Padding="16,8"
                             HorizontalOptions="Center"
-                            VerticalOptions="Center"
-                            WidthRequest="250"
-                            FontSize="25"
-                            FontAttributes="Bold"
-                            BackgroundColor="#7B7070"
-                            Margin="10"
-                            />
-                        <Entry
-                            x:Name="MdpEntry"
-                            Placeholder="Mot de passe"
-                            HorizontalOptions="Center"
-                            VerticalOptions="Center"
-                            WidthRequest="250"
-                            FontSize="25"
-                            FontAttributes="Bold"
-                            BackgroundColor="#7B7070"
-                            Margin="10"
-                            />
-                        <Button
-                            x:Name="LoginButton"
-                            HorizontalOptions="Center"
-                            VerticalOptions="Center"
-                            Text="Connexion"
-                            BackgroundColor="#1CCEE6"
-                            TextColor="White"
-                            WidthRequest="250"
-                            FontSize="25"
-                            FontAttributes="Bold"
-                            Margin="10"
-                            Clicked="UserButton_Clicked"
-                            />
-                        <Label
-                            Text="OR"
-                            FontSize="25"
-                            HorizontalOptions="Center"
-                            VerticalOptions="Center"
-                            FontAttributes="Bold"
-                            Margin="10"
-                            />
-                        <Button
-                            x:Name="InscriptionButton"
-                            HorizontalOptions="Center"
-                            VerticalOptions="Center"
-                            Text="Inscription"
-                            BackgroundColor="#1CCEE6"
-                            TextColor="White"
-                            WidthRequest="250"
-                            FontSize="25"
-                            FontAttributes="Bold"
-                            Margin="10"
-                            Clicked="CreateUserButton_Clicked"
-                            />
-                    </VerticalStackLayout>
+                            Grid.Row="2">
+                        <VerticalStackLayout>
+                            <Label
+                                Text="Connexion"
+                                VerticalTextAlignment="Center"
+                                HorizontalTextAlignment="Center"
+                                TextColor="#ECF8F6"
+                                FontAttributes="Bold"
+                                FontSize="30"
+                                Margin="10"
+                                />
+                            <Border Stroke="#D6955B"
+                                    Background="#18534F"
+                                    StrokeThickness="0"
+                                    StrokeShape="RoundRectangle 40">
+                                <Entry
+                                    x:Name="EmailEntry"
+                                    Placeholder="Email"
+                                    HorizontalOptions="Center"
+                                    VerticalOptions="Center"
+                                    WidthRequest="250"
+                                    FontSize="25"
+                                    FontAttributes="Bold"
+                                    BackgroundColor="#D6955B"
+                                    Margin="10"
+                                    />
+                            </Border>
+                            <Border Stroke="#D6955B"
+                                    Background="#18534F"
+                                    StrokeThickness="0"
+                                    StrokeShape="RoundRectangle 40">
+                                <Entry
+                                    x:Name="MdpEntry"
+                                    Placeholder="Mot de passe"
+                                    HorizontalOptions="Center"
+                                    VerticalOptions="Center"
+                                    WidthRequest="250"
+                                    FontSize="25"
+                                    FontAttributes="Bold"
+                                    BackgroundColor="#D6955B"
+                                    Margin="10"
+                                    />
+                            </Border>
+                            <Button
+                                x:Name="LoginButton"
+                                HorizontalOptions="Center"
+                                VerticalOptions="Center"
+                                Text="Connexion"
+                                BackgroundColor="#D6955B"
+                                TextColor="White"
+                                WidthRequest="250"
+                                FontSize="25"
+                                FontAttributes="Bold"
+                                Margin="10"
+                                Clicked="UserButton_Clicked"
+                                />
+                            <Label
+                                Text="OR"
+                                FontSize="25"
+                                HorizontalOptions="Center"
+                                VerticalOptions="Center"
+                                FontAttributes="Bold"
+                                Margin="10"
+                                />
+                            <Button
+                                x:Name="InscriptionButton"
+                                HorizontalOptions="Center"
+                                VerticalOptions="Center"
+                                Text="Inscription"
+                                BackgroundColor="#D6955B"
+                                TextColor="White"
+                                WidthRequest="250"
+                                FontSize="25"
+                                FontAttributes="Bold"
+                                Margin="10"
+                                Clicked="CreateUserButton_Clicked"
+                                />
+                        </VerticalStackLayout>
+                    </Border>
+                    
                 </Grid>
             </StackLayout>
         </StackLayout>
