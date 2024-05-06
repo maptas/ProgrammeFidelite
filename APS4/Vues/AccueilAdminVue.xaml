@@ -2,15 +2,19 @@
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="APS4.Vues.AccueilAdminVue"
-             Title="AccueilAdminVue">
+             Title="AccueilAdminVue"
+             BackgroundColor="#e9c46a">
     <ScrollView VerticalScrollBarVisibility="Always">
         <StackLayout>
-            <StackLayout Margin="5" Spacing="20">
+            <StackLayout Spacing="20">
                 <Grid>
                     <Grid.RowDefinitions>
                         <RowDefinition Height="100"/>
                         <RowDefinition Height="75"/>
-                        <RowDefinition Height="500"/>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="75"/>
                     </Grid.RowDefinitions>
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition Width="*"/>
@@ -61,16 +65,16 @@
                                Margin="10"
                                />
                             <Entry
-                           x:Name="MontantAtteindre"
-                           Placeholder="Montant"
-                           HorizontalOptions="Center"
-                           VerticalOptions="Center"
-                           WidthRequest="250"
-                           FontSize="25"
-                           FontAttributes="Bold"
-                           BackgroundColor="#FFFFFF"
-                           Margin="10"
-                           />
+                               x:Name="MontantAtteindre"
+                               Placeholder="Montant"
+                               HorizontalOptions="Center"
+                               VerticalOptions="Center"
+                               WidthRequest="250"
+                               FontSize="25"
+                               FontAttributes="Bold"
+                               BackgroundColor="#FFFFFF"
+                               Margin="10"
+                               />
                             <Button
                                x:Name="AjoutBlasonButton"
                                HorizontalOptions="Center"
@@ -138,6 +142,17 @@
                                BackgroundColor="#FFFFFF"
                                Margin="10"
                                />
+                            <Entry
+                               x:Name="CategorieIdProduit"
+                               Placeholder="Categorie Id"
+                               HorizontalOptions="Center"
+                               VerticalOptions="Center"
+                               WidthRequest="250"
+                               FontSize="25"
+                               FontAttributes="Bold"
+                               BackgroundColor="#FFFFFF"
+                               Margin="10"
+                               />
                             <Button
                                x:Name="AjoutProduitButton"
                                HorizontalOptions="Center"
@@ -153,7 +168,204 @@
                                />
                         </VerticalStackLayout>
                     </Grid>
+                    <Grid
+                        Grid.Column="0"
+                        Grid.Row="3">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="300"/>
+                            <ColumnDefinition Width="*"/>
+                        </Grid.ColumnDefinitions>
+
+                        <VerticalStackLayout
+                            Grid.Column="1">
+                            <Label
+                                Text="Recompense"
+                                VerticalTextAlignment="Center"
+                                HorizontalTextAlignment="Center"
+                                FontAttributes="Bold"
+                                FontSize="30"
+                                Margin="10"
+                                />
+                            <Entry
+                                x:Name="NomRecompenseEntry"
+                                Placeholder="Nom"
+                                HorizontalOptions="Center"
+                                VerticalOptions="Center"
+                                WidthRequest="250"
+                                FontSize="25"
+                                FontAttributes="Bold"
+                                BackgroundColor="#FFFFFF"
+                                Margin="10"
+                                />
+                            <Entry
+                                x:Name="PointsNecessaireEntry"
+                                Placeholder="Points nécessaire"
+                                HorizontalOptions="Center"
+                                VerticalOptions="Center"
+                                WidthRequest="250"
+                                FontSize="25"
+                                FontAttributes="Bold"
+                                BackgroundColor="#FFFFFF"
+                                Margin="10"
+                                />
+                            <Entry
+                                x:Name="ProduitIdEntry"
+                                Placeholder="Produit id"
+                                HorizontalOptions="Center"
+                                VerticalOptions="Center"
+                                WidthRequest="250"
+                                FontSize="25"
+                                FontAttributes="Bold"
+                                BackgroundColor="#FFFFFF"
+                                Margin="10"
+                                />
+                            <Button
+                                x:Name="AjoutRecompenseButton"
+                                HorizontalOptions="Center"
+                                VerticalOptions="Center"
+                                Text="Ajouter"
+                                BackgroundColor="#1CCEE6"
+                                TextColor="White"
+                                WidthRequest="250"
+                                FontSize="25"
+                                FontAttributes="Bold"
+                                Margin="10"
+                                Clicked="RecompenseButton_Clicked"
+                                />
+                        </VerticalStackLayout>
+                    </Grid>
+                    <Grid
+                        Grid.Column="1"
+                        Grid.Row="3">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="300"/>
+                            <ColumnDefinition Width="*"/>
+                        </Grid.ColumnDefinitions>
+
+                        <VerticalStackLayout
+                            Grid.Column="1">
+                            <Label
+                                Text="Catégorie"
+                                VerticalTextAlignment="Center"
+                                HorizontalTextAlignment="Center"
+                                FontAttributes="Bold"
+                                FontSize="30"
+                                Margin="10"
+                                />
+                            <Entry
+                                x:Name="NomCategorieEntry"
+                                Placeholder="Nom"
+                                HorizontalOptions="Center"
+                                VerticalOptions="Center"
+                                WidthRequest="250"
+                                FontSize="25"
+                                FontAttributes="Bold"
+                                BackgroundColor="#FFFFFF"
+                                Margin="10"
+                                />
+                            <Entry
+                                x:Name="UrlImageEntry"
+                                Placeholder="Url d'image"
+                                HorizontalOptions="Center"
+                                VerticalOptions="Center"
+                                WidthRequest="250"
+                                FontSize="25"
+                                FontAttributes="Bold"
+                                BackgroundColor="#FFFFFF"
+                                Margin="10"
+                                />
+                            <Button
+                                x:Name="AjoutCategorieButton"
+                                HorizontalOptions="Center"
+                                VerticalOptions="Center"
+                                Text="Ajouter"
+                                BackgroundColor="#1CCEE6"
+                                TextColor="White"
+                                WidthRequest="250"
+                                FontSize="25"
+                                FontAttributes="Bold"
+                                Margin="10"
+                                Clicked="CategorieButton_Clicked"
+                                />
+                        </VerticalStackLayout>
+                    </Grid>
+                    <Grid
+                        Grid.Column="0"
+                        Grid.Row="4">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="300"/>
+                            <ColumnDefinition Width="*"/>
+                        </Grid.ColumnDefinitions>
+
+                        <VerticalStackLayout
+                            Grid.Column="1">
+                            <Label
+                                Text="Palier"
+                                VerticalTextAlignment="Center"
+                                HorizontalTextAlignment="Center"
+                                FontAttributes="Bold"
+                                FontSize="30"
+                                Margin="10"
+                                />
+                            <Entry
+                                x:Name="NomPalierEntry"
+                                Placeholder="Nom"
+                                HorizontalOptions="Center"
+                                VerticalOptions="Center"
+                                WidthRequest="250"
+                                FontSize="25"
+                                FontAttributes="Bold"
+                                BackgroundColor="#FFFFFF"
+                                Margin="10"
+                                />
+                            <Entry
+                                x:Name="PalierBasEntry"
+                                Placeholder="Palier Bas"
+                                HorizontalOptions="Center"
+                                VerticalOptions="Center"
+                                WidthRequest="250"
+                                FontSize="25"
+                                FontAttributes="Bold"
+                                BackgroundColor="#FFFFFF"
+                                Margin="10"
+                                />
+                            <Entry
+                                x:Name="PalierHautEntry"
+                                Placeholder="Palier Haut"
+                                HorizontalOptions="Center"
+                                VerticalOptions="Center"
+                                WidthRequest="250"
+                                FontSize="25"
+                                FontAttributes="Bold"
+                                BackgroundColor="#FFFFFF"
+                                Margin="10"
+                                />
+                            <Button
+                                x:Name="AjoutPalierButton"
+                                HorizontalOptions="Center"
+                                VerticalOptions="Center"
+                                Text="Ajouter"
+                                BackgroundColor="#1CCEE6"
+                                TextColor="White"
+                                WidthRequest="250"
+                                FontSize="25"
+                                FontAttributes="Bold"
+                                Margin="10"
+                                Clicked="PalierButton_Clicked"
+                                />
+                        </VerticalStackLayout>
+                    </Grid>
                 </Grid>
+                <Button 
+                    Grid.Row="5"
+                    Text="Retour" 
+                    Clicked="Retour_Clicked" 
+                    AnchorX="0" 
+                    HorizontalOptions="Center" 
+                    VerticalOptions="EndAndExpand"/>
             </StackLayout>
         </StackLayout>
     </ScrollView>

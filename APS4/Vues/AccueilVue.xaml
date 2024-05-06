@@ -2,15 +2,17 @@
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="APS4.Vues.AccueilVue"
-             Title="AccueilVue">
+             Title="AccueilVue"
+             BackgroundColor="#A1A1A1">
     <ScrollView VerticalScrollBarVisibility="Always">
         <StackLayout>
-            <StackLayout Margin="5" Spacing="20">
+            <StackLayout Spacing="20">
                 <Grid>
                     <Grid.RowDefinitions>
                         <RowDefinition Height="100"/>
                         <RowDefinition Height="75"/>
-                        <RowDefinition Height="500"/>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="100"/>
                     </Grid.RowDefinitions>
 
                     <Label 
@@ -18,11 +20,11 @@
                         Grid.Row="0"
                         VerticalTextAlignment="Center"
                         HorizontalTextAlignment="Center"
-                        TextColor="White"
+                        TextColor="#ECF8F6"
                         TextDecorations="Underline"
                         FontAttributes="Bold"
                         FontSize="40"
-                        BackgroundColor="#C50000"
+                        BackgroundColor="#264653"
                         />
 
                     <VerticalStackLayout
@@ -35,16 +37,130 @@
                             </CollectionView.ItemsLayout>
                             <CollectionView.ItemTemplate>
                                 <DataTemplate>
-                                    <StackLayout>
+                                    <StackLayout Margin="30">
                                         <!-- Enveloppez le Label dans un Frame pour la gestion des clics -->
-                                        <Frame BackgroundColor="Transparent">
-                                            <Label x:Name="a" Text="{Binding Nom}"/>
+                                        <Frame HasShadow="True">
+                                            <Frame.Shadow>
+                                                <Shadow Offset="20,20" Radius="40" Opacity="0.8"/>
+                                            </Frame.Shadow>
+                                            <StackLayout>
+                                                <Image Source="{Binding UrlImage}" HeightRequest="80" WidthRequest="80" Aspect="AspectFit"/>
+                                                <Label x:Name="produit" Text="{Binding Nom}" TextColor="Black" FontAttributes="Bold">
+                                                    <Label.GestureRecognizers>
+                                                        <TapGestureRecognizer Tapped="ProduitTapped"/>
+                                                    </Label.GestureRecognizers>
+                                                </Label>
+                                            </StackLayout>
                                         </Frame>
-                                        <Label Text="{Binding Prix, StringFormat='{}{0}€'}"/>
+                                        <Label Text="{Binding Prix, StringFormat='{}{0}€'}" TextColor="Black" FontAttributes="Bold"/>
                                     </StackLayout>
                                 </DataTemplate>
                             </CollectionView.ItemTemplate>
                         </CollectionView>
+                        <Button
+                            Text="echange de points (btn temporaire)"
+                            Clicked="ChangePage_EchangePts_Clicked"
+                            HorizontalOptions="Center"
+                            VerticalOptions="Center"
+                            Margin="10"
+                            />
+                    </VerticalStackLayout>
+                    <VerticalStackLayout
+                        Grid.Row="3"
+                        BackgroundColor="#264653">
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="*"/>
+                                <ColumnDefinition Width="*"/>
+                                <ColumnDefinition Width="*"/>
+                                <ColumnDefinition Width="*"/>
+                                <ColumnDefinition Width="*"/>
+                            </Grid.ColumnDefinitions>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="*"/>
+                                <RowDefinition Height="*"/>
+                            </Grid.RowDefinitions>
+                            <ImageButton 
+                                Source="imgmagasin.png"
+                                BackgroundColor="#264653"
+                                HeightRequest="50" 
+                                WidthRequest="50"
+                                Grid.Column="0"
+                                Grid.Row="0"
+                                CornerRadius="30"
+                                BorderColor="White"
+                                Aspect="AspectFit"
+                                Clicked="ChangePage_Magasin_Clicked"/>
+                            <Label 
+                                Text="Magasin"
+                                Grid.Column="0"
+                                Grid.Row="1"
+                                HorizontalTextAlignment="Center"/>
+                            <ImageButton 
+                                Source="imgmagasin.png"
+                                BackgroundColor="#264653"
+                                HeightRequest="50" 
+                                WidthRequest="50"
+                                Grid.Column="1"
+                                Grid.Row="0"
+                                CornerRadius="30"
+                                BorderColor="White"
+                                Aspect="AspectFit"
+                                Clicked="ChangePage_PointFidelite_Clicked"/>
+                            <Label 
+                                Text="Points de fidélités"
+                                Grid.Column="1"
+                                Grid.Row="1"
+                                HorizontalTextAlignment="Center"/>
+                            <ImageButton 
+                                Source="imgmagasin.png"
+                                BackgroundColor="#264653"
+                                HeightRequest="50" 
+                                WidthRequest="50"
+                                Grid.Column="2"
+                                Grid.Row="0"
+                                CornerRadius="30"
+                                BorderColor="White"
+                                Aspect="AspectFit"
+                                Clicked="ChangePage_MiniJeux_Clicked"/>
+                            <Label 
+                                Text="Mini-jeux"
+                                Grid.Column="2"
+                                Grid.Row="1"
+                                HorizontalTextAlignment="Center"/>
+                            <ImageButton 
+                                Source="imgmagasin.png"
+                                BackgroundColor="#264653"
+                                HeightRequest="50" 
+                                WidthRequest="50"
+                                Grid.Column="3"
+                                Grid.Row="0"
+                                CornerRadius="30"
+                                BorderColor="White"
+                                Aspect="AspectFit"
+                                Clicked="ChangePage_Panier_Clicked"/>
+                            <Label 
+                                Text="Panier"
+                                Grid.Column="3"
+                                Grid.Row="1"
+                                HorizontalTextAlignment="Center"/>
+                            <ImageButton 
+                                Source="imgmagasin.png"
+                                BackgroundColor="#264653"
+                                HeightRequest="50" 
+                                WidthRequest="50"
+                                Grid.Column="4"
+                                Grid.Row="0"
+                                CornerRadius="30"
+                                BorderColor="White"
+                                Aspect="AspectFit"
+                                Clicked="ChangePage_Profil_Clicked"/>
+                            <Label 
+                                Text="Profil"
+                                Grid.Column="4"
+                                Grid.Row="1"
+                                HorizontalTextAlignment="Center"/>
+                        </Grid>
                     </VerticalStackLayout>
                 </Grid>
             </StackLayout>

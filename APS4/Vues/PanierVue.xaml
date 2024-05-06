@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="APS4.Vues.PanierVue"
+             Title="PanierVue"
+             BackgroundColor="#A1A1A1">
+    <ScrollView VerticalScrollBarVisibility="Always">
+        <StackLayout>
+            <StackLayout Spacing="20">
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="100"/>
+                        <RowDefinition Height="75"/>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="75"/>
+                    </Grid.RowDefinitions>
+
+                    <Label 
+                        Text="King Burger"
+                        Grid.Row="0"
+                        VerticalTextAlignment="Center"
+                        HorizontalTextAlignment="Center"
+                        TextColor="#ECF8F6"
+                        TextDecorations="Underline"
+                        FontAttributes="Bold"
+                        FontSize="40"
+                        BackgroundColor="#264653"
+                        />
+
+                    <VerticalStackLayout
+                    Grid.Row="2">
+
+                        <CollectionView x:Name="MalisteProduits">
+                            <!-- Modèle d'élément pour les données de score -->
+                            <CollectionView.ItemsLayout>
+                                <GridItemsLayout Orientation="Vertical" Span="2" HorizontalItemSpacing="100"/>
+                            </CollectionView.ItemsLayout>
+                            <CollectionView.ItemTemplate>
+                                <DataTemplate>
+                                    <StackLayout Margin="30">
+                                        <!-- Enveloppez le Label dans un Frame pour la gestion des clics -->
+                                        <Frame HasShadow="True">
+                                            <Frame.Shadow>
+                                                <Shadow Offset="20,20" Radius="40" Opacity="0.8"/>
+                                            </Frame.Shadow>
+                                            <StackLayout>
+                                                <ImageButton Source="{Binding ImageUrl}" HeightRequest="80" WidthRequest="80" Aspect="AspectFit"/>
+                                                <Label x:Name="produit" Text="{Binding LeNomProduit}" TextColor="Black" FontAttributes="Bold"/>
+                                            </StackLayout>
+                                        </Frame>
+                                        <Label  Text="{Binding Quantite}" TextColor="Black" FontAttributes="Bold"/>
+                                    </StackLayout>
+                                </DataTemplate>
+                            </CollectionView.ItemTemplate>
+                        </CollectionView>
+                        <Label 
+                            x:Name="PrixTotalLabel" 
+                            Text="" 
+                            TextColor="#ECF8F6" 
+                            FontAttributes="Bold"/>
+                        <Button 
+                            Text="Payer le panier" 
+                            Clicked="PayerPanier_Clicked" 
+                            AnchorX="0" 
+                            HorizontalOptions="Center" 
+                            VerticalOptions="EndAndExpand"/>
+                    </VerticalStackLayout>
+                    <Button 
+                        Grid.Row="3"
+                        Text="Retour" 
+                        Clicked="Retour_Clicked" 
+                        AnchorX="0" 
+                        HorizontalOptions="Center" 
+                        VerticalOptions="EndAndExpand"/>
+                </Grid>
+            </StackLayout>
+        </StackLayout>
+    </ScrollView>
+</ContentPage>

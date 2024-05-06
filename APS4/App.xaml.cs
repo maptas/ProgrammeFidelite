@@ -9,7 +9,8 @@ namespace APS4
             InitializeComponent();
 
             //MainPage = new ConnexionVue();
-            MainPage = new AppShell();
+            MainPage = new NavigationPage(new ConnexionVue());
+            //MainPage = new AppShell();
         }
     }
 }

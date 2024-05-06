@@ -121,6 +121,34 @@ namespace APS4.Apis
                 return null;
             }
         }
+        public async Task<ObservableCollection<T>> GetAllAsyncByID2<T>(string endpoint, string key, int value)
+        {
+            try
+            {
+                var requestData = new JObject
+                {
+                    [key] = value
+                };
+
+                var jsonContent = new StringContent(requestData.ToString(), Encoding.UTF8, "application/json");
+                var response = await _httpClient.PostAsync(Constantes.BaseApiAddress + endpoint, jsonContent);
+
+                if (!response.IsSuccessStatusCode)
+                {
+                    // Log or handle the response error as needed.
+                    return null;
+                }
+
+                var json = await response.Content.ReadAsStringAsync();
+                var result = JsonConvert.DeserializeObject<List<T>>(json);
+                return new ObservableCollection<T>(result);
+            }
+            catch (Exception ex)
+            {
+                // Log or handle the exception as needed.
+                return null;
+            }
+        }
         public async Task<T> GetOneAsyncByID<T>(string endpoint, string idValue)
         {
             try

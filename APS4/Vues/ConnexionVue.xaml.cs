@@ -57,4 +57,10 @@ public partial class ConnexionVue : ContentPage
     {
         await Navigation.PushAsync(new InscriptionVue());
     }
+
+    private void ConnexionAdmin_Clicked(object sender, EventArgs e)
+    {
+
+    }
 }
+//"https://www.palettedecouleur.net/palette-category/vintage/" chemin pour palette couleur

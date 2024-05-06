@@ -44,4 +44,9 @@ public partial class InscriptionVue : ContentPage
         }
 
     }
+
+    private async void RetourButton_Clicked(object sender, EventArgs e)
+    {
+		await Navigation.PushAsync(new ConnexionVue());
+    }
 }

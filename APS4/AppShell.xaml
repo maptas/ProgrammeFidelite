@@ -12,54 +12,58 @@
         ContentTemplate="{DataTemplate views:ConnexionVue}"
         Route="Modeles/ConnexionVue.xaml" />
 
-    
-
-    <FlyoutItem FlyoutDisplayOptions="AsMultipleItems">
-        <ShellContent Title="Magasin"
-                      Icon="Images/imgMagasin.png"
-                      Route="Modeles/AccueilVue.xaml"
-                      ContentTemplate="{DataTemplate views:AccueilVue}"/>
-        <ShellContent Title="Roulette"
-                      Icon="Images/imgMagasin.png"
-                      Route="Modeles/AccueilVue.xaml"
-                      ContentTemplate="{DataTemplate local:MainPage}"/>
-        <ShellContent Title="Mini-jeux"
-                      Icon="Images/imgMagasin.png"
-                      Route="Modeles/AccueilVue.xaml"
-                      ContentTemplate="{DataTemplate views:AccueilVue}"/>
-        <ShellContent Title="Profil"
-                      Icon="Images/imgMagasin.png"
-                      Route="Modeles/AccueilVue.xaml"
-                      ContentTemplate="{DataTemplate views:AccueilVue}"/>
-    </FlyoutItem>
     <TabBar>
         <Tab Title="Magasin"
-            Icon="Images/imgMagasin.png">
+            Icon="Ressources/Images/imgMagasin.png">
             <ShellContent ContentTemplate="{DataTemplate views:AccueilVue}" />
         </Tab>
         <Tab Title="Roulette"
-            Icon="Images/imgMagasin.png">
-            <ShellContent ContentTemplate="{DataTemplate views:AccueilVue}" />
+            Icon="Ressources/Images/imgMagasin.png">
+            <ShellContent ContentTemplate="{DataTemplate views:RouletteVue}" />
         </Tab>
         <Tab Title="Mini-jeux"
-            Icon="Images/imgMagasin.png">
-            <ShellContent ContentTemplate="{DataTemplate views:AccueilVue}" />
+            Icon="Ressources/Images/imgMagasin.png">
+            <ShellContent ContentTemplate="{DataTemplate views:MiniJeuxVue}" />
         </Tab>
         <Tab Title="Profil"
-            Icon="Images/imgMagasin.png">
-            <ShellContent ContentTemplate="{DataTemplate views:AccueilVue}" />
+            Icon="Ressources/Images/imgMagasin.png">
+            <ShellContent ContentTemplate="{DataTemplate views:Profil}" />
+        </Tab>
+        <Tab Title="Panier"
+            Icon="Ressources/Images/imgMagasin.png">
+            <ShellContent ContentTemplate="{DataTemplate views:PanierVue}" />
         </Tab>
     </TabBar>
 
+    <FlyoutItem FlyoutDisplayOptions="AsMultipleItems">
+        <ShellContent Title="Magasin"
+                      Icon="Ressources/Images/imgMagasin.png"
+                      Route="Modeles/AccueilVue.xaml"
+                      ContentTemplate="{DataTemplate views:AccueilVue}"/>
+        <ShellContent Title="Roulette"
+                      Icon="Ressources/Images/imgMagasin.png"
+                      Route="Modeles/RouletteVue.xaml"
+                      ContentTemplate="{DataTemplate views:RouletteVue}"/>
+        <ShellContent Title="Mini-jeux"
+                      Icon="Ressources/Images/imgMagasin.png"
+                      Route="Modeles/MiniJeuxVue.xaml"
+                      ContentTemplate="{DataTemplate views:MiniJeuxVue}"/>
+        <ShellContent Title="Profil"
+                      Icon="Ressources/Images/imgMagasin.png"
+                      Route="Modeles/Profil.xaml"
+                      ContentTemplate="{DataTemplate views:Profil}"/>
+    </FlyoutItem>
+    
+
     <Shell.FlyoutHeader>
         <VerticalStackLayout>
-            <Image Source="Images/imgMagasin.png" WidthRequest="150"></Image>
+            <Image Source="Ressources/Images/imgMagasin.png" WidthRequest="150"></Image>
         </VerticalStackLayout>
     </Shell.FlyoutHeader>
 
     <Shell.FlyoutFooter>
         <VerticalStackLayout>
-            <Image Source="Images/imgMagasin.png" WidthRequest="150"></Image>
+            <Image Source="Ressources/Images/imgMagasin.png" WidthRequest="150"></Image>
         </VerticalStackLayout>
     </Shell.FlyoutFooter>
 

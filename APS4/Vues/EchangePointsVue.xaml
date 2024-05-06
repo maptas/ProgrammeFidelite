@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="APS4.Vues.EchangePointsVue"
+             Title="EchangePointsVue"
+             BackgroundColor="#A1A1A1">
+    <ScrollView VerticalScrollBarVisibility="Always">
+        <StackLayout>
+            <StackLayout Spacing="20">
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="100"/>
+                        <RowDefinition Height="75"/>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="75"/>
+                    </Grid.RowDefinitions>
+
+                    <Label 
+                        Text="King Burger"
+                        Grid.Row="0"
+                        Grid.ColumnSpan="2"
+                        VerticalTextAlignment="Center"
+                        HorizontalTextAlignment="Center"
+                        TextColor="#ECF8F6"
+                        TextDecorations="Underline"
+                        FontAttributes="Bold"
+                        FontSize="40"
+                        BackgroundColor="#264653"
+                        />
+
+                    <Border
+                        Stroke="#2a9d8f"
+                        StrokeThickness="3"
+                        StrokeShape="RoundRectangle 40"
+                        Background="#2a9d8f"
+                        Padding="16,8"
+                        HorizontalOptions="Center"
+                        Grid.Row="2"
+                        Margin="10">
+                        <VerticalStackLayout>
+                            <Label
+                                Text="Mail"
+                                VerticalTextAlignment="Center"
+                                HorizontalTextAlignment="Center"
+                                TextColor="#ECF8F6"
+                                FontAttributes="Bold"
+                                FontSize="30"
+                                Margin="10"/>
+                            <Entry
+                                Placeholder="exemple@ex.fr"
+                                TextColor="#ECF8F6"
+                                FontSize="30"
+                                Margin="10"
+                                x:Name="mailEntry"
+                                VerticalOptions="Center"
+                                HorizontalOptions="Center"/>
+                            <Label
+                                Text="Nombre de points"
+                                VerticalTextAlignment="Center"
+                                HorizontalTextAlignment="Center"
+                                TextColor="#ECF8F6"
+                                FontAttributes="Bold"
+                                FontSize="30"
+                                Margin="10"/>
+                            <Entry
+                                Placeholder="50"
+                                TextColor="#ECF8F6"
+                                x:Name="nbPointEntry"
+                                FontSize="30"
+                                Margin="10"
+                                VerticalOptions="Center"
+                                HorizontalOptions="Center"/>
+                            <Button
+                                x:Name="DonnerPointsButton"
+                                HorizontalOptions="Center"
+                                VerticalOptions="Center"
+                                Text="Envoyer"
+                                BackgroundColor="#264653"
+                                TextColor="#ECF8F6"
+                                WidthRequest="250"
+                                FontSize="25"
+                                FontAttributes="Bold"
+                                Margin="10"
+                                Clicked="DonnerPointsButton_Clicked"/>
+                        </VerticalStackLayout>
+                    </Border>
+                    <Button 
+                        Grid.Row="4"
+                        Text="Retour" 
+                        Clicked="Retour_Clicked" 
+                        AnchorX="0" 
+                        HorizontalOptions="Center" 
+                        VerticalOptions="EndAndExpand"/>
+                </Grid>
+            </StackLayout>
+        </StackLayout>
+    </ScrollView>
+</ContentPage>

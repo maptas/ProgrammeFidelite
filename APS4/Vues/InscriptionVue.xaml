@@ -3,154 +3,189 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="APS4.Vues.InscriptionVue"
              Title="InscriptionVue"
-             BackgroundColor="#000000">
-    <Grid>
-        <Grid.RowDefinitions>
-            <RowDefinition Height="100"/>
-            <RowDefinition Height="15"/>
-            <RowDefinition Height="500"/>
-        </Grid.RowDefinitions>
-        <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="*"/>
-            <ColumnDefinition Width="800"/>
-            <ColumnDefinition Width="*"/>
-        </Grid.ColumnDefinitions>
+             BackgroundColor="#A1A1A1">
+    <ScrollView VerticalScrollBarVisibility="Always">
+        <StackLayout>
+            <StackLayout Spacing="20">
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="100"/>
+                        <RowDefinition Height="15"/>
+                        <RowDefinition Height="500"/>
+                        <RowDefinition Height="15"/>
+                        <RowDefinition Height="*"/>
+                    </Grid.RowDefinitions>
 
-        <Label 
-            Text="King Burger"
-            Grid.ColumnSpan="3"
-            Grid.Row="0"
-            VerticalTextAlignment="Center"
-            HorizontalTextAlignment="Center"
-            TextColor="White"
-            TextDecorations="Underline"
-            FontAttributes="Bold"
-            FontSize="40"
-            BackgroundColor="Red"
-            />
-        <VerticalStackLayout
-            Grid.Row="2"
-            Grid.Column="1"
-            Grid.ColumnSpan="1">
-            <Grid>
-                <Grid.RowDefinitions>
-                    <RowDefinition Height="75"/>
-                    <RowDefinition Height="75"/>
-                    <RowDefinition Height="75"/>
-                    <RowDefinition Height="75"/>
-                    <RowDefinition Height="75"/>
-                </Grid.RowDefinitions>
-                <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="*"/>
-                    <ColumnDefinition Width="300"/>
-                    <ColumnDefinition Width="300"/>
-                    <ColumnDefinition Width="*"/>
-                </Grid.ColumnDefinitions>
-                <Label
-                    Grid.Row="0"
-                    Grid.ColumnSpan="4"
-                    Text="Inscription"
-                    TextColor="White"
-                    VerticalTextAlignment="Center"
-                    HorizontalTextAlignment="Center"
-                    FontAttributes="Bold"
-                    FontSize="30"
-                    Margin="10"
-                    />
-                <Entry
-                    Grid.Row="1"
-                    Grid.Column="1"
-                    x:Name="NomEntry"
-                    Placeholder="Nom"
-                    HorizontalOptions="Center"
-                    VerticalOptions="Center"
-                    WidthRequest="250"
-                    FontSize="25"
-                    FontAttributes="Bold"
-                    BackgroundColor="#FFFFFF"
-                    Margin="10"
-                    />
-                <Entry
-                    Grid.Row="1"
-                    Grid.Column="2"
-                    x:Name="PrenomEntry"
-                    Placeholder="Prenom"
-                    HorizontalOptions="Center"
-                    VerticalOptions="Center"
-                    WidthRequest="250"
-                    FontSize="25"
-                    FontAttributes="Bold"
-                    BackgroundColor="#FFFFFF"
-                    Margin="10"
-                    />
-                <Entry
-                    Grid.Row="2"
-                    Grid.Column="1"
-                    x:Name="TelephoneEntry"
-                    Placeholder="Telephone"
-                    HorizontalOptions="Center"
-                    VerticalOptions="Center"
-                    WidthRequest="250"
-                    FontSize="25"
-                    FontAttributes="Bold"
-                    BackgroundColor="#FFFFFF"
-                    Margin="10"
-                    />
-                <Entry
-                    Grid.Row="2"
-                    Grid.Column="2"
-                    x:Name="DateNaissanceEntry"
-                    Placeholder="Date de naissance"
-                    HorizontalOptions="Center"
-                    VerticalOptions="Center"
-                    WidthRequest="250"
-                    FontSize="25"
-                    FontAttributes="Bold"
-                    BackgroundColor="#FFFFFF"
-                    Margin="10"
-                    />
-                <Entry
-                    Grid.Row="3"
-                    Grid.Column="1"
-                    x:Name="EmailEntry"
-                    Placeholder="Email"
-                    HorizontalOptions="Center"
-                    VerticalOptions="Center"
-                    WidthRequest="250"
-                    FontSize="25"
-                    FontAttributes="Bold"
-                    BackgroundColor="#FFFFFF"
-                    Margin="10"
-                    />
-                <Entry
-                    Grid.Row="3"
-                    Grid.Column="2"
-                    x:Name="MdpEntry"
-                    Placeholder="Mot de passe"
-                    HorizontalOptions="Center"
-                    VerticalOptions="Center"
-                    WidthRequest="250"
-                    FontSize="25"
-                    FontAttributes="Bold"
-                    BackgroundColor="#FFFFFF"
-                    Margin="10"
-                    />
-                <Button
-                    Grid.Row="4"
-                    Grid.ColumnSpan="4"
-                    x:Name="InscriptionButton"
-                    HorizontalOptions="Center"
-                    VerticalOptions="Center"
-                    Text="Inscription"
-                    BackgroundColor="#1CCEE6"
-                    TextColor="White"
-                    WidthRequest="250"
-                    FontSize="25"
-                    FontAttributes="Bold"
-                    Margin="10"
-                    Clicked="UserButton_Clicked"
-                    />
-            </Grid>
-        </VerticalStackLayout>
-    </Grid>
+                    <Label 
+                        Text="King Burger"
+                        Grid.Row="0"
+                        VerticalTextAlignment="Center"
+                        HorizontalTextAlignment="Center"
+                        TextColor="#ECF8F6"
+                        TextDecorations="Underline"
+                        FontAttributes="Bold"
+                        FontSize="40"
+                        BackgroundColor="#264653"
+                        />
+                    <Border Stroke="#2a9d8f"
+                        StrokeThickness="3"
+                        StrokeShape="RoundRectangle 40"
+                        Background="#2a9d8f"
+                        Padding="0"
+                        HorizontalOptions="Center"
+                        Grid.Row="2">
+                        <ScrollView VerticalScrollBarVisibility="Always">
+                            <StackLayout VerticalOptions="CenterAndExpand" 
+                                         HorizontalOptions="CenterAndExpand"
+                                         Margin="10">
+                                <StackLayout Spacing="20">
+                                    <VerticalStackLayout
+                            Grid.Row="2">
+                            <Label
+                                Grid.Row="0"
+                                Grid.ColumnSpan="4"
+                                Text="Inscription"
+                                TextColor="#ECF8F6"
+                                VerticalTextAlignment="Center"
+                                HorizontalTextAlignment="Center"
+                                FontAttributes="Bold"
+                                FontSize="30"
+                                Margin="10"
+                                />
+                            <Border Stroke="#e9c46a"
+                                Background="#2a9d8f"
+                                StrokeThickness="0"
+                                StrokeShape="RoundRectangle 40">
+                                <Entry
+                                    x:Name="NomEntry"
+                                    Placeholder="Nom"
+                                    HorizontalOptions="Center"
+                                    VerticalOptions="Center"
+                                    WidthRequest="250"
+                                    FontSize="25"
+                                    FontAttributes="Bold"
+                                    BackgroundColor="#e9c46a"
+                                    Margin="10"
+                                    TextColor="#ECF8F6"
+                                    />
+                            </Border>
+                            <Border Stroke="#e9c46a"
+                                Background="#2a9d8f"
+                                StrokeThickness="0"
+                                StrokeShape="RoundRectangle 40">
+                                <Entry
+                                    x:Name="PrenomEntry"
+                                    Placeholder="Prenom"
+                                    HorizontalOptions="Center"
+                                    VerticalOptions="Center"
+                                    WidthRequest="250"
+                                    FontSize="25"
+                                    FontAttributes="Bold"
+                                    BackgroundColor="#e9c46a"
+                                    Margin="10"
+                                    TextColor="#ECF8F6"
+                                    />
+                            </Border>
+                            <Border Stroke="#e9c46a"
+                                Background="#2a9d8f"
+                                StrokeThickness="0"
+                                StrokeShape="RoundRectangle 40">
+                                <Entry
+                                    x:Name="TelephoneEntry"
+                                    Placeholder="Telephone"
+                                    HorizontalOptions="Center"
+                                    VerticalOptions="Center"
+                                    WidthRequest="250"
+                                    FontSize="25"
+                                    FontAttributes="Bold"
+                                    BackgroundColor="#e9c46a"
+                                    Margin="10"
+                                    TextColor="#ECF8F6"
+                                    />
+                            </Border>
+                            <Border Stroke="#e9c46a"
+                                Background="#2a9d8f"
+                                StrokeThickness="0"
+                                StrokeShape="RoundRectangle 40">
+                                <Entry
+                                    x:Name="DateNaissanceEntry"
+                                    Placeholder="Date de naissance"
+                                    HorizontalOptions="Center"
+                                    VerticalOptions="Center"
+                                    WidthRequest="250"
+                                    FontSize="25"
+                                    FontAttributes="Bold"
+                                    BackgroundColor="#e9c46a"
+                                    Margin="10"
+                                    TextColor="#ECF8F6"
+                                    />
+                            </Border>
+                            <Border Stroke="#e9c46a"
+                                Background="#2a9d8f"
+                                StrokeThickness="0"
+                                StrokeShape="RoundRectangle 40">
+                                <Entry
+                                    x:Name="EmailEntry"
+                                    Placeholder="Email"
+                                    HorizontalOptions="Center"
+                                    VerticalOptions="Center"
+                                    WidthRequest="250"
+                                    FontSize="25"
+                                    FontAttributes="Bold"
+                                    BackgroundColor="#e9c46a"
+                                    Margin="10"
+                                    TextColor="#ECF8F6"
+                                    />
+                            </Border>
+                            <Border Stroke="#e9c46a"
+                                Background="#2a9d8f"
+                                StrokeThickness="0"
+                                StrokeShape="RoundRectangle 40">
+                                <Entry
+                                    x:Name="MdpEntry"
+                                    Placeholder="Mot de passe"
+                                    HorizontalOptions="Center"
+                                    VerticalOptions="Center"
+                                    WidthRequest="250"
+                                    FontSize="25"
+                                    FontAttributes="Bold"
+                                    BackgroundColor="#e9c46a"
+                                    Margin="10"
+                                    TextColor="#ECF8F6"
+                                    />
+                            </Border>
+                            <Button
+                                x:Name="InscriptionButton"
+                                HorizontalOptions="Center"
+                                VerticalOptions="Center"
+                                Text="Inscription"
+                                BackgroundColor="#264653"
+                                TextColor="#ECF8F6"
+                                WidthRequest="250"
+                                FontSize="25"
+                                FontAttributes="Bold"
+                                Margin="10"
+                                Clicked="UserButton_Clicked"
+                                />
+                        </VerticalStackLayout>
+                                </StackLayout>
+                            </StackLayout>
+                        </ScrollView>
+                    </Border>
+                    <Button x:Name="RetourButton"
+                        Grid.Row="4"
+                        HorizontalOptions="Center"
+                        VerticalOptions="Center"
+                        Text="Retour"
+                        BackgroundColor="#264653"
+                        TextColor="White"
+                        WidthRequest="250"
+                        FontSize="25"
+                        FontAttributes="Bold"
+                        Margin="10"
+                        Clicked="RetourButton_Clicked"/>
+                </Grid>
+            </StackLayout>
+        </StackLayout>
+    </ScrollView>
 </ContentPage>

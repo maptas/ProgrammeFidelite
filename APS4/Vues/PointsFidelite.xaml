@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="APS4.Vues.PointsFidelite"
+             Title="PointsFidelite"
+             BackgroundColor="#A1A1A1">
+    <ScrollView VerticalScrollBarVisibility="Always">
+        <StackLayout>
+            <StackLayout Spacing="20">
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="100"/>
+                        <RowDefinition Height="75"/>
+                        <RowDefinition Height="40"/>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="*"/>
+                    </Grid.RowDefinitions>
+
+                    <Label 
+                        Text="King Burger"
+                        Grid.Row="0"
+                        VerticalTextAlignment="Center"
+                        HorizontalTextAlignment="Center"
+                        TextColor="#ECF8F6"
+                        TextDecorations="Underline"
+                        FontAttributes="Bold"
+                        FontSize="40"
+                        BackgroundColor="#264653"
+                        />
+                    <Label 
+                        x:Name="nbPointsUser"
+                        Grid.Row="1"
+                        HorizontalTextAlignment="Start"
+                        TextColor="#ECF8F6"
+                        FontSize="30"/>
+                    <VerticalStackLayout
+                        Grid.Row="3">
+                        <Label Text="Récompenses du magasin"
+                                VerticalTextAlignment="Center"
+                                HorizontalTextAlignment="Center"
+                                TextColor="#ECF8F6"
+                                FontSize="30"/>
+                        <CollectionView x:Name="MalisteRecompenses">
+                            <!-- Modèle d'élément pour les données de score -->
+                            <CollectionView.ItemsLayout>
+                                <GridItemsLayout Orientation="Vertical" Span="2" HorizontalItemSpacing="100"/>
+                            </CollectionView.ItemsLayout>
+                            <CollectionView.ItemTemplate>
+                                <DataTemplate>
+                                    <StackLayout>
+                                        <!-- Enveloppez le Label dans un Frame pour la gestion des clics -->
+                                        <Frame HasShadow="True">
+                                            <StackLayout>
+                                                <Image Source="{Binding UrlImage}" HeightRequest="80" WidthRequest="80"/>
+                                                <Label Text="{Binding LeNomProduit}" TextColor="Black" FontAttributes="Bold">
+                                                    <Label.GestureRecognizers>
+                                                        <TapGestureRecognizer Tapped="RecompenseTapped"/>
+                                                    </Label.GestureRecognizers>
+                                                </Label>
+                                            </StackLayout>
+                                        </Frame>
+                                        <Label x:Name="nbPointsLabel" Text="{Binding PointNecessaire, StringFormat='{}{0}Pts'}" TextColor="#ECF8F6" FontAttributes="Bold"/>
+                                    </StackLayout>
+                                </DataTemplate>
+                            </CollectionView.ItemTemplate>
+                            <CollectionView.Footer>
+                                <BoxView HeightRequest="1" BackgroundColor="Gray" IsVisible="{Binding ShowSeparator}" />
+                            </CollectionView.Footer>
+                        </CollectionView>
+                    </VerticalStackLayout>
+                    <VerticalStackLayout
+                        Grid.Row="4">
+                        <Label Text="Récompenses partenaires"
+                            HorizontalTextAlignment="Center"
+                            VerticalTextAlignment="Center"
+                            TextColor="#ECF8F6"
+                            FontSize="30"/>
+                        <CollectionView x:Name="MalisteRecompensesPartenaires">
+                            <!-- Modèle d'élément pour les données de score -->
+                            <CollectionView.ItemsLayout>
+                                <GridItemsLayout Orientation="Vertical" Span="2" HorizontalItemSpacing="100"/>
+                            </CollectionView.ItemsLayout>
+                            <CollectionView.ItemTemplate>
+                                <DataTemplate>
+                                    <StackLayout>
+                                        <!-- Enveloppez le Label dans un Frame pour la gestion des clics -->
+                                        <Frame BackgroundColor="#264653" CornerRadius="40" HasShadow="True">
+                                            <StackLayout>
+                                                <Image Source="imgmagasin.png" HeightRequest="30" WidthRequest="30"/>
+                                                <Label x:Name="produit" Text="{Binding Nom}" TextColor="#ECF8F6" FontAttributes="Bold">
+                                                    <Label.GestureRecognizers>
+                                                        <TapGestureRecognizer Tapped="ProduitTapped"/>
+                                                    </Label.GestureRecognizers>
+                                                </Label>
+                                            </StackLayout>
+                                        </Frame>
+                                        <Label Text="{Binding Prix, StringFormat='{}{0}€'}" TextColor="#ECF8F6" FontAttributes="Bold"/>
+                                        <Label Text="{Binding NbPts, StringFormat='{}{0}Pts'}" TextColor="#ECF8F6" FontAttributes="Bold"/>
+                                    </StackLayout>
+                                </DataTemplate>
+                            </CollectionView.ItemTemplate>
+                        </CollectionView>
+                    </VerticalStackLayout>
+                </Grid>
+            </StackLayout>
+        </StackLayout>
+    </ScrollView>
+</ContentPage>

@@ -14,24 +14,26 @@ namespace APS4.Modeles
     {
         #region Attributs
 
+        private int _produitId;
         private string _nom;
         private double _prix;
         private int _pointParAchat;
         private readonly GestionApi _apiServices = new GestionApi();
         private int _userId;
         private int _categorieId;
+        private string _urlImage;
 
         #endregion
 
         #region Constructeurs
 
-        public Produits(string nom, double prix, int pointParAchat = 0)
+        public Produits(string nom, double prix, int pointParAchat = 0, int categorieId = 0)
         {
             this._nom = nom;
             this._prix = prix;
             this.PointParAchat = pointParAchat;
-            this._userId = Constantes.CurrentUser.Id;
-            this._categorieId = 1;
+            this._userId = Constantes.AdminId;
+            this._categorieId = categorieId;
         }
 
         #endregion
@@ -144,11 +146,17 @@ namespace APS4.Modeles
         [JsonProperty(PropertyName = "pointsFidelite")]
         public int PointParAchat { get => _pointParAchat; set => _pointParAchat = value; }
 
-        [JsonProperty(PropertyName = "Id")]
+        [JsonProperty(PropertyName = "UserID")]
         public int UserId { get => _userId; set => _userId = value; }
 
         [JsonProperty(PropertyName = "categorieId")]
         public int CategorieId { get => _categorieId; set => _categorieId = value; }
+
+        [JsonProperty(PropertyName = "id")]
+        public int ProduitId { get => _produitId; set => _produitId = value; }
+        
+        [JsonProperty(PropertyName = "imageUrl")]
+        public string UrlImage { get => _urlImage; set => _urlImage = value; }
 
         #endregion
     }

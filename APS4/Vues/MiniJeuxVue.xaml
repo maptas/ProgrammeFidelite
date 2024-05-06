@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="APS4.Vues.MiniJeuxVue"
+             Title="MiniJeuxVue"
+             BackgroundColor="#A1A1A1">
+    <ScrollView VerticalScrollBarVisibility="Always">
+        <StackLayout>
+            <StackLayout Spacing="20">
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="100"/>
+                        <RowDefinition Height="75"/>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="100"/>
+                    </Grid.RowDefinitions>
+
+                    <Label 
+                        Text="King Burger"
+                        Grid.Row="0"
+                        VerticalTextAlignment="Center"
+                        HorizontalTextAlignment="Center"
+                        TextColor="#ECF8F6"
+                        TextDecorations="Underline"
+                        FontAttributes="Bold"
+                        FontSize="40"
+                        BackgroundColor="#264653"
+                        />
+
+                    <VerticalStackLayout
+                        Grid.Row="2">
+
+                        <CollectionView x:Name="maListeCartes">
+                            <CollectionView.ItemsLayout>
+                                <GridItemsLayout Orientation="Vertical" Span="2" HorizontalItemSpacing="100"/>
+                            </CollectionView.ItemsLayout>
+                            <CollectionView.ItemTemplate>
+                                <DataTemplate>
+                                    <StackLayout Margin="30">
+                                        <Image Source="{Binding UrlImage}" HeightRequest="80" WidthRequest="80" Aspect="AspectFit"/>
+                                    </StackLayout>
+                                </DataTemplate>
+                            </CollectionView.ItemTemplate>
+                        </CollectionView>
+
+                    </VerticalStackLayout>
+                    <Button 
+                        Grid.Row="3"
+                        Text="Retour" 
+                        Clicked="Retour_Clicked" 
+                        AnchorX="0" 
+                        HorizontalOptions="Center" 
+                        VerticalOptions="EndAndExpand"/>
+                </Grid>
+            </StackLayout>
+        </StackLayout>
+    </ScrollView>
+</ContentPage>
